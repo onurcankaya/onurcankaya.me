@@ -1,4 +1,10 @@
 node_modules/
+public/
 .cache/
-public
-src/gatsby-types.d.ts
+.vscode/
+
+src/typeDeclarations/gatsby-types.d.ts
+
+# env variables
+.env.development
+.env.production

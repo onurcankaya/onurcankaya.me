@@ -1,54 +1,35 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import { Link } from 'gatsby'
+import React from 'react'
+import styled from 'styled-components'
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+import { Layout } from '../components/Layout'
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-
-// markup
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <Layout>
+      <Wrapper>
+        <Title>404</Title>
+        <Subtitle>Page Not Found</Subtitle>
+        <Link to='/'>Go home</Link>
+      </Wrapper>
+    </Layout>
   )
 }
+
+const Wrapper = styled.header`
+  padding: 120px 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
+const Title = styled.h1`
+  font-size: 96px;
+  margin-bottom: 32px;
+`
+const Subtitle = styled.h3`
+  font-size: 48px;
+  margin-bottom: 48px;
+`
 
 export default NotFoundPage
