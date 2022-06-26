@@ -2,6 +2,7 @@ node_modules/
 public/
 .cache/
 .vscode/
+.DS_Store
 
 src/typeDeclarations/gatsby-types.d.ts
 

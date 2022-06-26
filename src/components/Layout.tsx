@@ -1,13 +1,19 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 
-import { darkTheme, GlobalStyles, lightTheme } from '../styles'
+import { darkTheme, GlobalStyles } from '../styles'
 
-export const Layout = ({ children }: { children: React.ReactNode }) => {
+import { Nav } from './Nav'
+
+export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider theme={darkTheme}>
       <GlobalStyles />
-      <Wrapper>{children}</Wrapper>
+
+      <Wrapper>
+        <Nav />
+        {children}
+      </Wrapper>
     </ThemeProvider>
   )
 }

@@ -23,10 +23,9 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background: ${({ theme }) => theme.background};
-    color: ${({ theme }) => theme.text};
+    background: ${({ theme }) => theme.primaryBg};
+    color: ${({ theme }) => theme.white};
     font-family: var(--font-sans);
-    font-size: 16px;
     line-height: 1.2;
   }
 
@@ -34,7 +33,15 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
   }
 
+  p {
+    line-height: 1.4;
+  }
+
   a {
-    color: ${({ theme }) => theme.link};
+    color: ${({ theme }) => theme.white};
+    text-decoration: none;
+    &:hover {
+      opacity: 0.7;
+    }
   }
 `
