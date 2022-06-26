@@ -9,7 +9,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Layout } from '../components/Layout'
-import { IExperience } from '../types/Experience'
+import { IExperience } from '../types/experience'
 
 type Props = PageProps<{
   contentfulAbout: {
@@ -108,7 +108,7 @@ const Text = styled.p`
 `
 const Description = styled.div`
   margin: 2rem 0;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: ${({ theme }) => theme.slate};
   p {
     margin-bottom: 1rem;

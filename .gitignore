@@ -4,7 +4,7 @@ public/
 .vscode/
 .DS_Store
 
-src/typeDeclarations/gatsby-types.d.ts
+src/declarations/gatsby-types.d.ts
 
 # env variables
 .env.development

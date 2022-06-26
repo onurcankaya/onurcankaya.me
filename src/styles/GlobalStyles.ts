@@ -1,10 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-import { variables } from './variables'
-
 export const GlobalStyles = createGlobalStyle`
-  ${variables};
-
   html {
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -14,6 +10,7 @@ export const GlobalStyles = createGlobalStyle`
   *:before,
   *:after {
     box-sizing: inherit;
+    font-family: 'Lato', -apple-system, system-ui, sans-serif;
   }
 
   body {
