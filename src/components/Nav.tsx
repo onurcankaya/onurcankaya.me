@@ -3,8 +3,9 @@ import React, { Ref, useRef, useState } from 'react'
 import { BsEnvelopeFill, BsGithub, BsLinkedin } from 'react-icons/bs'
 import styled from 'styled-components'
 
+import logo from '../assets/images/logo.png'
 import { useOnClickOutside } from '../hooks/useClickOutside'
-import { IRoute } from '../types/Route'
+import { IRoute } from '../types/route'
 
 type MenuProps = {
   open: boolean
@@ -27,7 +28,9 @@ export function Nav() {
 
   return (
     <Wrapper ref={rootRef as Ref<HTMLDivElement>}>
-      <Logo to='/'>Onur.</Logo>
+      <LogoWrapper to='/'>
+        <Logo src={logo} alt='site-logo' />
+      </LogoWrapper>
       <Burger onClick={handleToggle} open={open}>
         <div />
         <div />
@@ -59,12 +62,16 @@ export function Nav() {
 
 const Wrapper = styled.div``
 
-const Logo = styled(Link)`
+const LogoWrapper = styled(Link)`
   position: absolute;
-  top: 2.5rem;
-  left: 2.5rem;
+  top: 1rem;
+  left: 1rem;
   z-index: 999;
   font-size: 2rem;
+`
+const Logo = styled.img`
+  width: 70px;
+  height: 70px;
 `
 const MenuItem = styled(Link)`
   padding: 0 0.5rem;
@@ -116,7 +123,7 @@ const Menu = styled.nav`
   padding: 6rem;
   height: 96vh;
   margin: 1.2rem;
-  width: 360px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;

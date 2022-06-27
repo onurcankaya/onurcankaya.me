@@ -9,7 +9,7 @@ export const GlobalFonts = createGlobalStyle`
         src: local('Lato'),
         url(${LatoRegularWoff}) format('woff'),
         url(${LatoRegularWoff2}) format('woff2');
-        font-weight: 300;
+        font-weight: 400;
         font-style: normal;
     }
 `
