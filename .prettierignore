@@ -1,3 +1,5 @@
 .cache
 public
 package.json
+*.css
+*.svg

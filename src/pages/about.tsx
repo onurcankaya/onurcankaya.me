@@ -7,9 +7,10 @@ import {
 } from 'gatsby-source-contentful/rich-text'
 import React from 'react'
 import styled from 'styled-components'
+import '../styles/nes.min.css'
 
 import { Layout } from '../components/Layout'
-import { IExperience } from '../types/experience'
+import { IExperience, ISkill } from '../types'
 
 type Props = PageProps<{
   contentfulAbout: {
@@ -18,6 +19,7 @@ type Props = PageProps<{
     }
     text: RenderRichTextData<ContentfulRichTextGatsbyReference>
     experience: IExperience[]
+    skills: ISkill[]
   }
 }>
 
@@ -40,19 +42,23 @@ export const query = graphql`
           raw
         }
       }
+      skills {
+        title
+        description
+      }
     }
   }
 `
 
 export default function about({ data }: Props) {
-  const { image, text, experience } = data.contentfulAbout
+  const { image, text, experience, skills } = data.contentfulAbout
 
   return (
     <Layout>
       <Wrapper>
         <ImageWrapper image={getImage(image) || image} alt={image.title} />
         <About>{renderRichText(text)}</About>
-        <ExperienceWrapper>
+        <SectionWrapper>
           <Title>Experience</Title>
           {experience.reverse().map((item: IExperience, index: React.Key) => (
             <Experience key={index}>
@@ -64,7 +70,25 @@ export default function about({ data }: Props) {
               <Description>{renderRichText(item.description)}</Description>
             </Experience>
           ))}
-        </ExperienceWrapper>
+        </SectionWrapper>
+        <SectionWrapper>
+          <Title>Skills</Title>
+          {skills.map((skill: ISkill, index: React.Key) => (
+            <Skill key={index}>
+              <Header>{skill.title}</Header>
+              <Text>{skill.description}</Text>
+            </Skill>
+          ))}
+        </SectionWrapper>
+        <IconWrapper>
+          <a
+            href='https://github.com/onurcankaya'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <i className='nes-octocat animate'></i>
+          </a>
+        </IconWrapper>
       </Wrapper>
     </Layout>
   )
@@ -75,7 +99,7 @@ const Wrapper = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 7.5rem 2.5rem;
+  padding: 7.5rem 2.5rem 5rem 2.5rem;
 
   @media screen and (min-width: 576px) {
     padding: 7.5rem;
@@ -98,12 +122,13 @@ const About = styled.div`
   }
   margin-bottom: 5rem;
 `
-const ExperienceWrapper = styled.div`
+const SectionWrapper = styled.div`
   width: 100%;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 `
 const Title = styled.h3`
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  text-decoration: underline;
   text-align: left;
 `
 const Experience = styled.div`
@@ -122,4 +147,12 @@ const Description = styled.div`
   p {
     margin-bottom: 1rem;
   }
+`
+const Skill = styled.div`
+  margin-bottom: 2rem;
+`
+const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `

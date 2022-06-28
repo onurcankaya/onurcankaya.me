@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 import logo from '../assets/images/logo.png'
 import { useOnClickOutside } from '../hooks/useClickOutside'
-import { IRoute } from '../types/route'
+import { IRoute } from '../types'
 
 type MenuProps = {
   open: boolean
