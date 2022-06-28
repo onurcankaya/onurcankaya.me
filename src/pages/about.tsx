@@ -99,6 +99,8 @@ const ImageWrapper = styled(GatsbyImage)`
   width: 300px;
   height: 300px;
   border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
   margin-bottom: 5rem;
 
   @media screen and (min-width: 576px) {

@@ -141,17 +141,13 @@ const Menu = styled.nav`
   }
 
   a {
-    font-size: 3rem;
+    font-size: 2rem;
     text-transform: uppercase;
     padding: 2rem 0;
     font-weight: bold;
     letter-spacing: 0.4rem;
     text-decoration: none;
     transition: color 0.3s linear;
-
-    @media screen and (min-width: 576px) {
-      font-size: 2rem;
-    }
   }
 `
 const Contact = styled.div`
