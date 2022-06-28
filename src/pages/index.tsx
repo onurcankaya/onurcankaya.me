@@ -31,15 +31,23 @@ const HomePage = ({ data }: Props) => {
 }
 
 const Wrapper = styled.header`
-  padding: 120px 0;
+  padding: 7.5rem 2.2rem;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (min-width: 576px) {
+    padding: 7.5rem 6rem;
+  }
 `
 const Heading = styled.h2`
-  font-size: 48px;
+  font-size: 2.5rem;
   font-weight: 400;
+
+  @media screen and (min-width: 576px) {
+    font-size: 3rem;
+  }
 `
 
 export default HomePage

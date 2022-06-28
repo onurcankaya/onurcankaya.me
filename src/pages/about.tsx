@@ -75,13 +75,20 @@ const Wrapper = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 7.5rem;
+  padding: 7.5rem 2.5rem;
+  @media screen and (min-width: 576px) {
+    padding: 7.5rem;
+  }
 `
 const ImageWrapper = styled(GatsbyImage)`
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   margin-bottom: 5rem;
+  @media screen and (min-width: 576px) {
+    width: 400px;
+    height: 400px;
+  }
 `
 const About = styled.div`
   p {

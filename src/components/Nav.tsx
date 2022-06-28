@@ -14,7 +14,7 @@ type MenuProps = {
 const routes: IRoute[] = [
   { id: '0', label: 'Home', path: '/' },
   { id: '1', label: 'About', path: '/about' },
-  { id: '2', label: 'Work', path: '/work' },
+  { id: '2', label: 'Projects', path: '/projects' },
 ]
 
 export function Nav() {
@@ -64,9 +64,9 @@ const Wrapper = styled.div``
 
 const LogoWrapper = styled(Link)`
   position: absolute;
-  top: 1rem;
-  left: 1rem;
-  z-index: 999;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 2;
   font-size: 2rem;
 `
 const Logo = styled.img`
@@ -120,20 +120,25 @@ const Menu = styled.nav`
   position: absolute;
   top: 0;
   right: 0;
-  padding: 6rem;
-  height: 96vh;
-  margin: 1.2rem;
-  width: 350px;
+  padding: 4rem;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: ${({ theme }) => theme.secondaryBg};
-  text-align: left;
   z-index: 1;
-  border-radius: ${({ theme }) => theme.borderRadius};
+  text-align: center;
   transition: transform 0.4s ease-in-out;
   transform: ${({ open }: MenuProps) =>
     open ? 'translateX(0)' : 'translateX(110%)'};
+
+  @media screen and (min-width: 576px) {
+    height: 96vh;
+    width: 350px;
+    margin: 1.2rem;
+    border-radius: ${({ theme }) => theme.borderRadius};
+  }
 
   a {
     font-size: 2rem;
@@ -149,8 +154,9 @@ const Contact = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   padding: 2rem 0;
 `
 const ContactIcon = styled.a`
-  margin-right: 2rem;
+  margin: 0 1rem;
 `
