@@ -31,7 +31,7 @@ const HomePage = ({ data }: Props) => {
 }
 
 const Wrapper = styled.header`
-  padding: 7.5rem 2.2rem;
+  padding: 7.5rem 2rem;
   height: 100vh;
   display: flex;
   align-items: center;

@@ -76,6 +76,7 @@ const Wrapper = styled.main`
   align-items: center;
   justify-content: center;
   padding: 7.5rem 2.5rem;
+
   @media screen and (min-width: 576px) {
     padding: 7.5rem;
   }
@@ -85,6 +86,7 @@ const ImageWrapper = styled(GatsbyImage)`
   height: 300px;
   border-radius: 50%;
   margin-bottom: 5rem;
+
   @media screen and (min-width: 576px) {
     width: 400px;
     height: 400px;

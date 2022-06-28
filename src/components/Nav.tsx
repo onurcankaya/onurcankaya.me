@@ -120,7 +120,7 @@ const Menu = styled.nav`
   position: absolute;
   top: 0;
   right: 0;
-  padding: 4rem;
+  padding: 10rem 4rem;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -141,13 +141,17 @@ const Menu = styled.nav`
   }
 
   a {
-    font-size: 2rem;
+    font-size: 3rem;
     text-transform: uppercase;
     padding: 2rem 0;
     font-weight: bold;
     letter-spacing: 0.4rem;
     text-decoration: none;
     transition: color 0.3s linear;
+
+    @media screen and (min-width: 576px) {
+      font-size: 2rem;
+    }
   }
 `
 const Contact = styled.div`

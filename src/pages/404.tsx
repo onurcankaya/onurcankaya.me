@@ -17,19 +17,22 @@ const NotFoundPage = () => {
 }
 
 const Wrapper = styled.header`
-  padding: 120px 0;
+  padding: 7.5rem 2.2rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media screen and (min-width: 576px) {
+    padding: 7.5rem 5rem;
+  }
 `
 const Title = styled.h1`
-  font-size: 96px;
-  margin-bottom: 32px;
+  font-size: 6rem;
+  margin-bottom: 2rem;
 `
 const Subtitle = styled.h3`
-  font-size: 48px;
-  margin-bottom: 48px;
+  font-size: 3rem;
+  margin-bottom: 3rem;
 `
 
 export default NotFoundPage
