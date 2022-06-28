@@ -7,7 +7,6 @@ import {
 } from 'gatsby-source-contentful/rich-text'
 import React from 'react'
 import styled from 'styled-components'
-import '../styles/nes.min.css'
 
 import { Layout } from '../components/Layout'
 import { IExperience, ISkill } from '../types'
@@ -80,15 +79,6 @@ export default function about({ data }: Props) {
             </Skill>
           ))}
         </SectionWrapper>
-        <IconWrapper>
-          <a
-            href='https://github.com/onurcankaya'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <i className='nes-octocat animate'></i>
-          </a>
-        </IconWrapper>
       </Wrapper>
     </Layout>
   )
@@ -150,9 +140,4 @@ const Description = styled.div`
 `
 const Skill = styled.div`
   margin-bottom: 2rem;
-`
-const IconWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `
