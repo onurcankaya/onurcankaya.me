@@ -1,4 +1,4 @@
-export interface ISkill {
+export interface Skill {
   title: string
   description: string
 }

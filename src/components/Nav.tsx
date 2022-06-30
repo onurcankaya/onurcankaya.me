@@ -5,13 +5,13 @@ import styled from 'styled-components'
 
 import logo from '../assets/images/logo.png'
 import { useOnClickOutside } from '../hooks/useClickOutside'
-import { IRoute } from '../types'
+import { Route } from '../types'
 
 type MenuProps = {
   open: boolean
 }
 
-const routes: IRoute[] = [
+const routes: Route[] = [
   { id: '0', label: 'Home', path: '/' },
   { id: '1', label: 'About', path: '/about' },
   { id: '2', label: 'Projects', path: '/projects' },
@@ -36,7 +36,7 @@ export function Nav() {
         <div />
       </Burger>
       <Menu open={open}>
-        {routes.map((route: IRoute) => (
+        {routes.map((route: Route) => (
           <MenuItem to={route.path} key={route.id}>
             {route.label}
           </MenuItem>

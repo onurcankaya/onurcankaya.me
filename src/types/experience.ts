@@ -3,7 +3,7 @@ import {
   RenderRichTextData,
 } from 'gatsby-source-contentful/rich-text'
 
-export interface IExperience {
+export interface Experience {
   company: string
   role: string
   date: string

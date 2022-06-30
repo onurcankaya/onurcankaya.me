@@ -9,7 +9,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Layout } from '../components/Layout'
-import { IExperience, ISkill } from '../types'
+import { Experience, Skill } from '../types'
 
 type Props = PageProps<{
   contentfulAbout: {
@@ -17,8 +17,8 @@ type Props = PageProps<{
       title: string
     }
     text: RenderRichTextData<ContentfulRichTextGatsbyReference>
-    experience: IExperience[]
-    skills: ISkill[]
+    experience: Experience[]
+    skills: Skill[]
   }
 }>
 
@@ -59,7 +59,7 @@ export default function about({ data }: Props) {
         <About>{renderRichText(text)}</About>
         <SectionWrapper>
           <Title>Experience</Title>
-          {experience.reverse().map((item: IExperience, index: React.Key) => (
+          {experience.reverse().map((item: Experience, index: React.Key) => (
             <Experience key={index}>
               <Header>{item.role}</Header>
               <Text>
@@ -72,7 +72,7 @@ export default function about({ data }: Props) {
         </SectionWrapper>
         <SectionWrapper>
           <Title>Skills</Title>
-          {skills.map((skill: ISkill, index: React.Key) => (
+          {skills.map((skill: Skill, index: React.Key) => (
             <Skill key={index}>
               <Header>{skill.title}</Header>
               <Text>{skill.description}</Text>

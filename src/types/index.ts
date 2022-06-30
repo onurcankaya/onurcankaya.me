@@ -1,3 +1,3 @@
-export type { ISkill } from './skill'
-export type { IExperience } from './experience'
-export type { IRoute } from './route'
+export type { Skill } from './skill'
+export type { Experience } from './experience'
+export type { Route } from './route'

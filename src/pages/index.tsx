@@ -38,7 +38,7 @@ const Wrapper = styled.header`
   justify-content: center;
 
   @media screen and (min-width: 576px) {
-    padding: 7.5rem 6rem;
+    padding: 7.5rem 0;
   }
 `
 const Heading = styled.h2`
@@ -46,7 +46,7 @@ const Heading = styled.h2`
   font-weight: 400;
 
   @media screen and (min-width: 576px) {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 `
 
