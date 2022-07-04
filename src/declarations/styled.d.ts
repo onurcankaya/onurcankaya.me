@@ -5,8 +5,10 @@ declare module 'styled-components' {
     primaryBg: string
     secondaryBg: string
     white: string
+    light: string
     gray: string
     slate: string
+    blue: string
     borderRadius: string
   }
 }

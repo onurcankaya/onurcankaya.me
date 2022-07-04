@@ -19,6 +19,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 const Wrapper = styled.main`
+  width: 90vw;
   max-width: 960px;
   margin: 0 auto;
 `

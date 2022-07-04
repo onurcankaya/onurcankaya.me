@@ -18,7 +18,7 @@ export const query = graphql`
   }
 `
 
-const HomePage = ({ data }: Props) => {
+export default function HomePage({ data }: Props) {
   const { heading } = data.contentfulIntro
 
   return (
@@ -31,23 +31,21 @@ const HomePage = ({ data }: Props) => {
 }
 
 const Wrapper = styled.header`
-  padding: 7.5rem 1.8rem;
+  padding: 0 1.5rem;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  @media screen and (min-width: 576px) {
-    padding: 7.5rem 0;
+  @media screen and (min-width: 36rem) {
+    padding: 0;
   }
 `
 const Heading = styled.h2`
   font-size: 2.5rem;
   font-weight: 400;
 
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: 36rem) {
     font-size: 3.5rem;
   }
 `
-
-export default HomePage

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import { Layout } from '../components/Layout'
 
-const NotFoundPage = () => {
+export default function NotFoundPage() {
   return (
     <Layout>
       <Wrapper>
@@ -22,7 +22,7 @@ const Wrapper = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: 36rem) {
     padding: 7.5rem 5rem;
   }
 `
@@ -34,5 +34,3 @@ const Subtitle = styled.h3`
   font-size: 3rem;
   margin-bottom: 3rem;
 `
-
-export default NotFoundPage

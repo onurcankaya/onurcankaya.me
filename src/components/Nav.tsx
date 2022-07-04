@@ -70,8 +70,8 @@ const LogoWrapper = styled(Link)`
   font-size: 2rem;
 `
 const Logo = styled.img`
-  width: 70px;
-  height: 70px;
+  width: 4.5rem;
+  height: 4.5rem;
 `
 const MenuItem = styled(Link)`
   padding: 0 0.5rem;
@@ -133,7 +133,7 @@ const Menu = styled.nav`
   transform: ${({ open }: MenuProps) =>
     open ? 'translateX(0)' : 'translateX(110%)'};
 
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: 36rem) {
     height: 96vh;
     width: 350px;
     margin: 1.2rem;

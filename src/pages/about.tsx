@@ -49,7 +49,7 @@ export const query = graphql`
   }
 `
 
-export default function about({ data }: Props) {
+export default function AboutPage({ data }: Props) {
   const { image, text, experience, skills } = data.contentfulAbout
 
   return (
@@ -60,23 +60,23 @@ export default function about({ data }: Props) {
         <SectionWrapper>
           <Title>Experience</Title>
           {experience.reverse().map((item: Experience, index: React.Key) => (
-            <Experience key={index}>
+            <ExperienceSection key={index}>
               <Header>{item.role}</Header>
               <Text>
                 {item.company} — {item.location}
               </Text>
               <Text>{item.date}</Text>
               <Description>{renderRichText(item.description)}</Description>
-            </Experience>
+            </ExperienceSection>
           ))}
         </SectionWrapper>
         <SectionWrapper>
           <Title>Skills</Title>
           {skills.map((skill: Skill, index: React.Key) => (
-            <Skill key={index}>
+            <SkillSection key={index}>
               <Header>{skill.title}</Header>
               <Text>{skill.description}</Text>
-            </Skill>
+            </SkillSection>
           ))}
         </SectionWrapper>
       </Wrapper>
@@ -89,30 +89,38 @@ const Wrapper = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 7.5rem 2.5rem 5rem 2.5rem;
+  padding: 10rem 0;
+  width: 80vw;
+  max-width: 960px;
+  margin: 0 auto;
 
-  @media screen and (min-width: 576px) {
-    padding: 7.5rem;
+  @media screen and (min-width: 60rem) {
+    width: 40vw;
   }
 `
 const ImageWrapper = styled(GatsbyImage)`
-  width: 300px;
-  height: 300px;
+  width: 18rem;
+  height: 18rem;
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   margin-bottom: 5rem;
 
-  @media screen and (min-width: 576px) {
-    width: 400px;
-    height: 400px;
+  @media screen and (min-width: 36rem) {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  @media screen and (min-width: 60rem) {
+    width: 25rem;
+    height: 25rem;
   }
 `
 const About = styled.div`
   p {
     margin-bottom: 2rem;
   }
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 `
 const SectionWrapper = styled.div`
   width: 100%;
@@ -123,7 +131,7 @@ const Title = styled.h3`
   text-decoration: underline;
   text-align: left;
 `
-const Experience = styled.div`
+const ExperienceSection = styled.div`
   margin-bottom: 4rem;
 `
 const Header = styled.h4`
@@ -140,6 +148,6 @@ const Description = styled.div`
     margin-bottom: 1rem;
   }
 `
-const Skill = styled.div`
+const SkillSection = styled.div`
   margin-bottom: 2rem;
 `
