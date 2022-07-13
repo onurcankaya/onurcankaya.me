@@ -13,12 +13,17 @@ type Props = PageProps<{
   }
 }>
 
+type ImageProps = {
+  height: number
+}
+
 export const query = graphql`
   {
     contentfulProjects {
       projects {
         image {
           gatsbyImageData(placeholder: TRACED_SVG, layout: CONSTRAINED)
+          height
         }
         title
         description {
@@ -37,11 +42,12 @@ export default function ProjectsPage({ data }: Props) {
   return (
     <Layout>
       <Wrapper>
-        {projects.map((item, index) => (
+        {projects.reverse().map((item, index) => (
           <ProjectWrapper key={index} href={item.siteUrl} target='_blank'>
             <Image
               image={getImage(item.image) || item.image}
-              alt={item.image.title}
+              alt={item.title}
+              height={item.image.height}
             />
             <TextWrapper>
               <Title>{item.title}</Title>
@@ -60,23 +66,26 @@ const Wrapper = styled.div`
 const ProjectWrapper = styled.a`
   display: block;
   width: 90vw;
-  height: 20rem;
   padding: 1rem;
   border-radius: 0.25rem;
-  margin: 0 auto;
+  margin: 0 auto 4rem auto;
   background-color: ${({ theme }) => theme.light};
+  &:hover {
+    opacity: 0.8;
+  }
 
   @media screen and (min-width: 36rem) {
     width: 50rem;
-    height: 35rem;
   }
 `
-const Image = styled(GatsbyImage)`
+const Image = styled(GatsbyImage)<ImageProps>`
   border-radius: 0.25rem;
+  height: ${(props) => props.height};
 `
 const TextWrapper = styled.div`
   color: ${({ theme }) => theme.blue};
-  padding: 1rem;
+  padding: 1.5rem 1rem;
+  height: 6rem;
 `
 const Title = styled.h4`
   text-decoration: underline;

@@ -7,6 +7,7 @@ import {
 export interface Project {
   image: IGatsbyImageData & {
     title: string
+    height: number
   }
   title: string
   description: RenderRichTextData<ContentfulRichTextGatsbyReference>
