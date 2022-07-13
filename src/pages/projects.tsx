@@ -42,7 +42,7 @@ export default function ProjectsPage({ data }: Props) {
   return (
     <Layout>
       <Wrapper>
-        {projects.reverse().map((item, index) => (
+        {projects.map((item, index) => (
           <ProjectWrapper key={index} href={item.siteUrl} target='_blank'>
             <Image
               image={getImage(item.image) || item.image}
@@ -91,4 +91,4 @@ const Title = styled.h4`
   text-decoration: underline;
   padding-bottom: 1rem;
 `
-const Description = styled.p``
+const Description = styled.div``
